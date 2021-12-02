@@ -126,24 +126,24 @@ public class FactoryFloor implements Runnable {
      * @return the Fitness Score
      */
     public double getFitnessScore() {
-        HashMap<Long, Double> scores = new HashMap<>();
+                        HashMap<Long, Double> scores = new HashMap<>();
 
-        AtomicDouble totalScore = new AtomicDouble(0);
+                        AtomicDouble totalScore = new AtomicDouble(0);
 
-        for (Station station_N : stations) {
-            for (Station station_M : stations) {
+                        for (Station station_N : stations) {
+                            for (Station station_M : stations) {
 
-                if (station_N.hashCode() == station_M.hashCode())
-                    continue;
+                                if (station_N.hashCode() == station_M.hashCode())
+                                    continue;
 
-                long hashCode = station_N.hashCode() * station_M.hashCode();
+                                long hashCode = station_N.hashCode() * station_M.hashCode();
 
-                if (! scores.containsKey(hashCode)) {
-                    scores.put(
-                            hashCode,
-                            station_N.getStationsScore(station_M)
-                    );
-                }
+                                if (! scores.containsKey(hashCode)) {
+                                    scores.put(
+                                            hashCode,
+                                            station_N.getStationsScore(station_M)
+                                    );
+                                }
             }
         }
         scores.forEach( (hashcode, score) -> totalScore.getAndAdd(score) );
@@ -170,7 +170,7 @@ public class FactoryFloor implements Runnable {
      *
      * @return A Random chunk (Section 1/4 of the entire floor)
      */
-    private Station[][] getChunk() {
+    public Station[][] getChunk() {
         float chunkChance = new Random().nextFloat();
 
 
