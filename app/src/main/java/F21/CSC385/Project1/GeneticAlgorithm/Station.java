@@ -117,14 +117,14 @@ public class Station {
      * @param y this Station y coordinate
      * @return if host Factory Floor has an available location at x, y
      */
-    private boolean checkFloorAvailability(int x, int y) { return factoryFloor.getFloor()[x][y] == null; }
+    public boolean checkFloorAvailability(int x, int y) { return factoryFloor.getFloor()[x][y] == null; }
 
     /** Gets the Euclidean distance between this Station and another Station
      *
      * @param otherStation A Station some distance from this Station
      * @return The Euclidean distance between the two stations
      */
-    private double getDistance(Station otherStation) {
+    public double getDistance(Station otherStation) {
         return Math.sqrt( (this.x - otherStation.x) * (this.x - otherStation.x) + (this.y - otherStation.y) * (this.y - otherStation.y) );
     }
 
@@ -133,7 +133,7 @@ public class Station {
      * @param otherStation A Station placed on the same host Factory Floor
      * @return Numerical difference of flavors between the two stations
      */
-    private int getFlavorDifference(Station otherStation) {
+    public int getFlavorDifference(Station otherStation) {
         return Math.abs( this.flavor - otherStation.flavor );
     }
 

@@ -17,14 +17,31 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:29.0-jre'
+
+    testRuntime(
+            'org.junit.jupiter:junit-jupiter-engine:5.4.2',
+            'org.junit.vintage:junit-vintage-engine:5.4.2'
+    )
 }
 
 application {
     // Define the main class for the application.
     mainClass = 'F21.CSC385.Project1.App'
 }
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+
