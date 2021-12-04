@@ -16,7 +16,7 @@ public class StationTest {
     public void test_checkFloorAvailability() {
         FactoryFloor factoryFloor = new FactoryFloor();
         station.setFactoryFloor(factoryFloor);
-        Assertions.assertFalse(station.checkFloorAvailability(station.getX(), station.getY()));
+        Assertions.assertTrue(station.checkFloorAvailability(station.getX(), station.getY()));
     }
 
     @Test
