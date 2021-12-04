@@ -37,11 +37,14 @@ application {
 }
 
 test {
-    useJUnitPlatform()
-
     testLogging {
         events "passed", "skipped", "failed"
     }
+    useJUnitPlatform()
+
+    include '**F21.CSC385.Project1.GeneticAlgorithm*'
+
+    
 }
 
 
